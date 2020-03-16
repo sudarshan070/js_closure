@@ -8,6 +8,8 @@ const lastName = "Stark";
 var knownAs = "no one";
 
 console.log(window.firstName, window.lastName, window.knownAs);
+// "no one"
+// const & let are are block scoped and cannot be accessed from outside the block. var are accessed in global.
 ```
 
 2. Guess the output:
@@ -22,17 +24,36 @@ function fullName(a, b) {
 }
 
 console.log(window.fullName(firstName, lastName));
+
+// global memory
+// firstName =  , const lastName = ;, var knownAs = undifine;
+// fullName = fn
+// Exection context
+// firstName =  "Arya", const lastName = "Stark";, var knownAs = "no one";
+// return a + b;
+// here window are use referance error will come because let & cont are  the blocked scope
 ```
 
 3. Make a Execution Context Diagram for the following JS and write the output.
 
 ```js
-fucntion addOne(num){
+function addOne(num) {
   return num + 1;
 }
 var one = addOne(0);
 var two = addOne(1);
 console.log(one, two);
+// globale memory
+// addOne = ->fn->
+// var one = undefine, var two = undefine
+// G.E.C.
+//  var one = call function addOne
+//  return num+ 1 = 0+1 = 1
+var one = 1;
+// var two  = call function addOne
+// return num + 1 = 1+1= 2
+var two = 2;
+console.log(one, two); // 1 2
 ```
 
 4. Make a Execution Context Diagram for the following JS and write the output.
@@ -44,17 +65,33 @@ fucntion addOne(num){
 }
 var two = addOne(1);
 console.log(one, two);
+
+// globle memory
+// var one = undefine
+// addOne = fn
+// var two = undefine
+// E.G.C
+// var one = call function addOne carry with a bag value 0
+// return num + 1= 0 +1 =1
+var one = 1
+// var two = call function addOne with  cary a bag value 1
+  //return num +1 = 1+1= 2
+  var two =2
+  console.log(one, two); // 1 2
 ```
 
 5. Make a Execution Context Diagram for the following JS and write the output.
 
 ```js
 console.log(addOne(0));
-fucntion addOne(num){
+function addOne(num) {
   return num + 1;
 }
 var two = addOne(1);
 console.log(two);
+// console.log(addOne(0))
+// addOne = fn
+// two = undefine
 ```
 
 6. Make a Execution Context Diagram for the following JS and write the output.
