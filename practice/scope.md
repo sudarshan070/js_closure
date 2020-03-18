@@ -140,6 +140,8 @@ function isAwesome() {
   console.log(awesome);
 }
 isAwesome();
+
+// undefine
 ```
 
 9. What will be the output of the following
@@ -153,6 +155,7 @@ function isAwesome() {
   console.log(awesome);
 }
 isAwesome();
+// true
 ```
 
 10. What will be the output of the following
@@ -166,6 +169,7 @@ function isAwesome() {
   console.log(awesome);
 }
 isAwesome();
+// undefine
 ```
 
 11. What will be the output of the following
@@ -180,6 +184,7 @@ function fullName(a, b) {
 }
 const name = fullName(firstName, lastName);
 console.log(name);
+// AryaStark
 ```
 
 12. What will be the output of the following
@@ -203,8 +208,8 @@ function sayHello() {
   let name = "Arya Stark";
 }
 sayHello();
-
 console.log(name);
+// let is block scope
 ```
 
 14. Guess the output of the code below with a reason.
@@ -214,6 +219,8 @@ if (true) {
   var name = "Arya Stark";
 }
 console.log(name);
+// Arya Stark
+// var is window scope
 ```
 
 15. Guess the output of the code below with a reason.
@@ -223,6 +230,7 @@ if (true) {
   let name = "Arya Stark";
 }
 console.log(name);
+// let is block scope
 ```
 
 16. Guess the output of the code below with a reason.
@@ -236,6 +244,8 @@ function isAwesome() {
   console.log(awesome);
 }
 isAwesome();
+// true
+// let is define in function
 ```
 
 17. Guess the output of the code below with a reason.
@@ -253,6 +263,8 @@ for (var i = 0; i < 20; i++) {
   setTimeout(() => console.log(i, "first"), 100);
 }
 console.log(i, "second");
+//  20  "second"
+//  20 "first"
 ```
 
 19. Guess the output of the code below with a reason.
@@ -262,6 +274,8 @@ for (let i = 0; i < 20; i++) {
   setTimeout(() => console.log(i, "first"), 100);
 }
 console.log(i, "second");
+// let is block scope only for loop wprk
+// loop start for 0 "first" to 19 "first"
 ```
 
 20. Guess the output and the reason behind that.
@@ -284,6 +298,8 @@ function sample() {
   }
   console.log(username);
 }
+// undefine
+// function is not call
 ```
 
 22. Guess the output and the reason behind that.
@@ -297,6 +313,8 @@ function sample() {
   }
   console.log(username, "second");
 }
+// undefine
+// function is not call
 ```
 
 23. Guess the output and the reason behind that.
@@ -310,6 +328,8 @@ function sample() {
   }
   console.log(username, "second");
 }
+// undefine
+// function is not call
 ```
 
 24. Guess the output and the reason behind that.
@@ -323,6 +343,11 @@ function sample(...args) {
 }
 
 sample("First", "Second", "Third");
+
+
+Hello I am first
+Hello I am Second
+Hello I am Third
 ```
 
 25. Guess the output and the reason behind that.
@@ -336,6 +361,9 @@ function sample(...args) {
 }
 
 sample("First", "Second", "Third");
+Hello I am first
+Hello I am Second
+Hello I am Third
 ```
 
 26. Guess the output and the reason behind that.
@@ -349,6 +377,9 @@ if (true) {
   let username = "Hello World!";
   myFunc();
 }
+//  ReferenceError
+// myFunc =
+// Execution context username is not find
 ```
 
 27. Guess the output and the reason behind that.
@@ -363,6 +394,8 @@ function outer() {
 }
 
 outer();
+I love this movie called ${movie.toUpperCase()
+// we written any thing in console is in string its return as its value
 ```
 
 28. Guess the output and the reason behind that.
@@ -378,6 +411,8 @@ function outer() {
 }
 
 outer();
+// I love this movie called ${movie.toUpperCase()
+// we written any thing in console is in string its return as its value
 ```
 
 29. Guess the output and the reason behind that.
@@ -397,6 +432,8 @@ function outer() {
 }
 
 outer();
+// I love this movie called ${movie.toUpperCase()
+// we written any thing in console is in string its return as its value
 ```
 
 30. Execute all the functions inside `allFunctions` variable using any loop. (Hint: use for of loop functions are object)
@@ -416,6 +453,7 @@ const divide = (a, b) => {
 };
 
 let allFunctions = [add, sub, multiply, divide];
+// undefine
 ```
 
 31. You have to pass 10 and 12 as initial value and find the final output when you pass the return value of one function as an input to the next function in the array `allFunctions`.
@@ -435,4 +473,5 @@ const divide = (a, b) => {
 };
 
 let allFunctions = [add, add, add, add, add, sub, sub, multiply, divide];
+// undefined
 ```

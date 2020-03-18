@@ -60,9 +60,20 @@ function reduce(array, callback, initialValue) {
 reduce(["m", "k"], addS, 0);
 
 //Extension 3
-function intersection(arrays) {}
+function intersection(arrays) {
+  return arrays.reduce((acc, cv) => {
+    acc.forEach((ele, index) => {
+      if (cv.indexOf(ele) == -1) {
+        acc.splice(index, 1);
+      }
+    });
+    return acc;
+  }, []);
+}
 
-// console.log(intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]));
+console.log(
+  intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20])
+);
 // should log: [5, 15]
 
 //Extension 4
@@ -72,13 +83,37 @@ function union(arrays) {}
 // should log: [5, 10, 15, 88, 1, 7, 100]
 
 //Extension 5
-function objOfMatches(array1, array2, callback) {}
+function objOfMatches(array1, array2, callback) {
+  var obj = [];
+  return array1.reduce((acc, cv, i) => {
+    if (callback(cv) === array2[i]) {
+      obj[cv] = array2[i];
+    }
+    return obj;
+  }, []);
+}
 
-// console.log(objOfMatches(['hi', 'howdy', 'bye', 'later', 'hello'], ['HI', 'Howdy', 'BYE', 'LATER', 'hello'], function(str) { return str.toUpperCase(); }));
+console.log(
+  objOfMatches(
+    ["hi", "howdy", "bye", "later", "hello"],
+    ["HI", "Howdy", "BYE", "LATER", "hello"],
+    function(str) {
+      return str.toUpperCase();
+    }
+  )
+);
 // should log: { hi: 'HI', bye: 'BYE', later: 'LATER' }
 
 //Extension 6
-function multiMap(arrVals, arrCallbacks) {}
+function multiMap(arrVals, arrCallbacks) {
+  return arrVals.reduce((acc, cv) => {
+    acc[cv] = arrCallbacks.reduce((accu, cV) => {
+      accu.push(accu(cV));
+      return accu;
+    }, []);
+    return acc;
+  }, {});
+}
 
-// console.log(multiMap(['catfood', 'glue', 'beer'], [function(str) { return str.toUpperCase(); }, function(str) { return str[0].toUpperCase() + str.slice(1).toLowerCase(); }, function(str) { return str + str; }]));
+//  console.log(multiMap(['catfood', 'glue', 'beer'], [function(str) { return str.toUpperCase(); }, function(str) { return str[0].toUpperCase() + str.slice(1).toLowerCase(); }, function(str) { return str + str; }]));
 // should log: { catfood: ['CATFOOD', 'Catfood', 'catfoodcatfood'], glue: ['GLUE', 'Glue', 'glueglue'], beer: ['BEER', 'Beer', 'beerbeer'] }
