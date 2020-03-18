@@ -12,12 +12,14 @@ var animal = "monkey";
 console.log(animal);
 let animal = "monkey";
 // Output or Error Message
+refrenceError;
 ```
 
 ```js
 console.log(animal);
 const animal = "monkey";
 // Output or Error Message
+refrenceError;
 ```
 
 ```js
@@ -26,6 +28,8 @@ function sayHello(msg) {
 }
 sayHello("Hey Everyone");
 // Output or Error Message
+// pop Window
+// "Hey Everyone"
 ```
 
 ```js
@@ -34,6 +38,8 @@ function sayHello(msg) {
   alert(msg);
 }
 // Output or Error Message
+// "Hay Everyone"
+// First decleration part done then after execution done
 ```
 
 ```js
@@ -42,6 +48,7 @@ var sayHello = msg => {
   alert(msg);
 };
 // Output or Error Message
+// "Hay Everyone"
 ```
 
 ```js
@@ -49,4 +56,5 @@ sayHello("Hey Everyone");
 let sayHello = msg => {
   alert(msg);
 };
+// refrenceError;
 ```
