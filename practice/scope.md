@@ -103,6 +103,14 @@ const addOne = num => {
 };
 var two = addOne(1);
 console.log(two);
+
+// in decleration mode
+// one = undefine
+// addOne =
+// two = undefine
+// In execution mode
+// one is call a function addOne but is not a finction
+// referance error
 ```
 
 7. Make a Execution Context Diagram for the following JS and write the output.
@@ -114,6 +122,11 @@ const addOne = num => {
 };
 var two = addOne(1);
 console.log(two);
+// addOne =
+// two = undefine
+
+// addOne(0) it is not define
+// referanceError
 ```
 
 8. What will be the output of the following
@@ -215,19 +228,22 @@ console.log(name);
 16. Guess the output of the code below with a reason.
 
 ```js
-for (var i = 0; i < 20; i++) {
-  //
+function isAwesome() {
+  let awesome;
+  if (true) {
+    awesome = true;
+  }
+  console.log(awesome);
 }
-console.log(i);
+isAwesome();
 ```
 
 17. Guess the output of the code below with a reason.
 
 ```js
-for (let i = 0; i < 20; i++) {
-  //
-}
+for (let i = 0; i < 20; i++) {}
 console.log(i);
+// referanceError bcause no action inside loop, console.log(i) cannot asccess the value of i
 ```
 
 18. Guess the output of the code below with a reason.

@@ -17,12 +17,22 @@ console.log(addS("pizza"));
 console.log(addS("bagel"));
 
 // Challenge 3
-function map(array, callback) {}
+function map(array, callback) {
+  var arr = [];
+  for (let i = 0; i < array.length; i++) {
+    arr.push(callback(array[i]));
+  }
+  return arr;
+}
 
-// console.log(map([1, 2, 3], addTwo));
+console.log(map([1, 2, 3], addTwo));
 
 // Challenge 4
-function forEach(array, callback) {}
+function forEach(array, callback) {
+  for (let i = 0; i < array.length; i++) {
+    callback(array[i]);
+  }
+}
 
 // see for yourself if your forEach works!
 
@@ -31,10 +41,23 @@ function forEach(array, callback) {}
 //--------------------------------------------------
 
 //Extension 1
-function mapWith(array, callback) {}
+function mapWith(array, callback) {
+  var arr = [];
+  array.forEach(ele => {
+    arr.push(callback(ele));
+  });
+  return arr;
+}
 
 //Extension 2
-function reduce(array, callback, initialValue) {}
+function reduce(array, callback, initialValue) {
+  var arr = [];
+  array.forEach(ele => {
+    arr.push(callback(i));
+  });
+  return arr;
+}
+reduce(["m", "k"], addS, 0);
 
 //Extension 3
 function intersection(arrays) {}

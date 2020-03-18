@@ -7,9 +7,9 @@ arrays.reduce((acc, cv) => acc.concat(cv), []);
 
 // Challenge 2. Your own loop
 // Your code here.
-function loop(n, test, update, action) {
-  for (let i = n; test(i); i = update(i)) {
-    action(i);
+function loop(n, test, update, body) {
+  for (let value = n; test(value); value = update(value)) {
+    body(value);
   }
 }
 loop(
